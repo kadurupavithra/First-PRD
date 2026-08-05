@@ -2,10 +2,6 @@
 
 class Main {
     public static void main(String[] args) {
-
-        // ==========================
-        // Candidate Profile
-        // ==========================
         String candidateName = "Aarav";
         int registrationNumber = 24031;
         String degree = "B.E. Computer Science";
@@ -24,16 +20,10 @@ class Main {
         boolean projectCompleted = true;
         boolean profileVerified = true;
 
-        // ==========================
-        // Percentage Calculations
-        // ==========================
         double aptitudePercentage = (double) aptitudeCorrectAnswers / aptitudeTotalQuestions * 100;
 
         double codingPercentage = (double) codingTestCasesPassed / codingTotalTestCases * 100;
 
-        // ==========================
-        // Eligibility Conditions
-        // ==========================
         boolean degreeEligible = degreePercentage >= 60;
 
         boolean backlogEligible = activeBacklogs == 0;
@@ -59,9 +49,6 @@ class Main {
                 projectEligible &&
                 verificationEligible;
 
-        // ==========================
-        // Report
-        // ==========================
         System.out.println("================================================");
         System.out.println("        CAMPUS PLACEMENT APPLICATION REPORT");
         System.out.println("================================================");
@@ -93,23 +80,41 @@ class Main {
 
         System.out.println("\n------------------------------------------------");
 
-        System.out.println("Degree Eligibility      : "
-                + (degreeEligible ? "Eligible" : "Not Eligible"));
+        if (degreeEligible) {
+            System.out.println("Degree Eligibility      : Eligible");
+        } else {
+            System.out.println("Degree Eligibility      : Not Eligible");
+        }
 
-        System.out.println("Backlog Eligibility     : "
-                + (backlogEligible ? "Eligible" : "Not Eligible"));
+        if (backlogEligible) {
+            System.out.println("Backlog Eligibility     : Eligible");
+        } else {
+            System.out.println("Backlog Eligibility     : Not Eligible");
+        }
 
-        System.out.println("Graduation Year         : "
-                + (graduationYearEligible ? "Eligible" : "Not Eligible"));
+        if (graduationYearEligible) {
+            System.out.println("Graduation Year         : Eligible");
+        } else {
+            System.out.println("Graduation Year         : Not Eligible");
+        }
 
-        System.out.println("Aptitude Eligibility    : "
-                + (aptitudeEligible ? "Eligible" : "Not Eligible"));
+        if (aptitudeEligible) {
+            System.out.println("Aptitude Eligibility    : Eligible");
+        } else {
+            System.out.println("Aptitude Eligibility    : Not Eligible");
+        }
 
-        System.out.println("Coding Eligibility      : "
-                + (codingEligible ? "Eligible" : "Not Eligible"));
+        if (codingEligible) {
+            System.out.println("Coding Eligibility      : Eligible");
+        } else {
+            System.out.println("Coding Eligibility      : Not Eligible");
+        }
 
-        System.out.println("Communication Status    : "
-                + (communicationEligible ? "Eligible" : "Not Eligible"));
+        if (communicationEligible) {
+            System.out.println("Communication Status    : Eligible");
+        } else {
+            System.out.println("Communication Status    : Not Eligible");
+        }
 
         System.out.println("------------------------------------------------");
 
@@ -118,8 +123,8 @@ class Main {
         // ==========================
 
         if (applicationEligible) {
-            System.out.println("Application Status      : Eligible to Apply");
-            System.out.println("Next Action             : Submit the company application");
+            System.out.println("Application Status    : Eligible to Apply");
+            System.out.println("Next Action           : Submit the company application");
         } else if (!degreeEligible) {
             System.out.println("Application Status      : Not Eligible");
             System.out.println("Next Action             : Improve the required degree percentage");
